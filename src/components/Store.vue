@@ -7,8 +7,8 @@
 
 <script>
 import faker from "faker";
-import Header from "./components/Header";
-import Catalog from "./components/Catalog";
+import Header from "./Header";
+import Catalog from "./Catalog";
 
 export default {
   name: "app",
