@@ -7,8 +7,28 @@ Vue.use(BootstrapVue);
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+	state:{
+		cart:[],
+		products:[]
+	},
+	mutations:{
+		setProducts(state, products){
+			state.products = products;
+		}
+	},
+	actions:{
+
+	}
+})
+
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  store,
 }).$mount('#app')
