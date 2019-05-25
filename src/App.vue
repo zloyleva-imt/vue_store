@@ -1,20 +1,18 @@
 <template>
   <div id="app">
     <Header/>
-    <Catalog/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import faker from "faker";
-import Header from "./Header";
-import Catalog from "./Catalog";
+import Header from "./components/Header";
 
 export default {
-  name: "Store",
+  name: "App",
   components: {
     Header,
-    Catalog
   },
   mounted() {
     setTimeout(() => {

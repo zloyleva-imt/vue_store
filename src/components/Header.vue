@@ -9,7 +9,8 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">Link</b-nav-item>
+          <router-link class="nav-link" :to="{name: 'catalog'}">Catalog</router-link>
+          <router-link class="nav-link" :to="{name: 'cart'}">Cart</router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
