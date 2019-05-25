@@ -1,29 +1,40 @@
 <template>
   <div id="app">
-	  <Header/>
+    <Header/>
+    <Catalog/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header';
+import faker from "faker";
+import Header from "./components/Header";
+import Catalog from "./components/Catalog";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Header
+    Header,
+    Catalog
   },
-  mounted(){
-	  setTimeout(() => {
-		  console.log("Loading products from API...");
-			this.$store.commit('setProducts', []);
-	  }, 2000);
+  mounted() {
+    setTimeout(() => {
+      console.log("Loading products from API...");
+      this.$store.commit("setProducts", this.getProducts());
+    }, 2000);
   },
-  methods:{
-
+  methods: {
+    getProducts() {
+      return [...Array(10)].map(() => ({
+        id: faker.random.uuid(),
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        department: faker.commerce.department(),
+        description: faker.lorem.sentences()
+      }));
+    }
   }
-}
+};
 </script>
 
 <style>
-
 </style>
