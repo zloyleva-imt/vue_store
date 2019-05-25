@@ -6,7 +6,7 @@
           <div class="price">${{product.price}}</div>
           <b-card-text>{{product.description}}</b-card-text>
 
-          <b-button href="#" variant="primary">Add to Cart</b-button>
+          <b-button href="#" variant="primary" @click="addToCart(product)">Add to Cart</b-button>
         </b-card>
       </b-col>
     </b-row>
@@ -20,6 +20,11 @@ export default {
     products() {
       return this.$store.state.products;
     }
+  },
+  methods:{
+	  addToCart(product){
+		  this.$store.commit('addProductToCart', product);
+	  }
   }
 };
 </script>

@@ -19,6 +19,9 @@ const store = new Vuex.Store({
 	mutations:{
 		setProducts(state, products){
 			state.products = products;
+		},
+		addProductToCart(state, product){
+			state.cart = [...state.cart, product];
 		}
 	},
 	actions:{
